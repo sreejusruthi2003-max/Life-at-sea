@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Crew Tools</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">Crew Tools</div>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+  </nav>
+  <button id="darkToggle" class="btn">Dark</button>
+</header>
+
+<main class="container">
+
+  <!-- PMS Checklist Generator -->
+  <section class="card">
+    <h2>PMS Checklist Generator</h2>
+    <p>Select equipment to generate a PMS checklist:</p>
+
+    <select id="equip">
+      <option value="main_engine">Main Engine</option>
+      <option value="generator">Generator</option>
+      <option value="purifier">Purifier</option>
+    </select>
+
+    <button id="gen" class="btn">Generate</button>
+
+    <pre id="checklist" style="margin-top:10px;"></pre>
+  </section>
+
+  <!-- Watch Schedule -->
+  <section class="card">
+    <h2>Watch Scheduler</h2>
+    <p>Generate a simple 7-day 4-on/8-off rota:</p>
+
+    <button id="rota" class="btn">Generate Rota</button>
+
+    <pre id="rotap" style="margin-top:10px;"></pre>
+  </section>
+
+</main>
+
+<script>
+document.getElementById("gen").onclick = () => {
+  const eq = document.getElementById("equip").value;
+  let tasks = [];
+
+  if (eq === "main_engine")
+    tasks = [
+      "Check lubrication oil level",
+      "Inspect cooling pump",
+      "Check alarms",
+      "Log running hours"
+    ];
+
+  if (eq === "generator")
+    tasks = [
+      "Check oil level",
+      "Inspect belts",
+      "Test auto-start",
+      "Check battery voltage"
+    ];
+
+  if (eq === "purifier")
+    tasks = [
+      "Check bowl",
+      "Drain sludge",
+      "Inspect seals",
+      "Record RPMs"
+    ];
+
+  document.getElementById("checklist").innerText =
+    "- " + tasks.join("\n- ");
+};
+
+document.getElementById("rota").onclick = () => {
+  const names = ["A", "B", "C", "D"];
+  let out = "";
+
+  for (let day = 1; day <= 7; day++) {
+    out += "Day " + day + " - ";
+    out += names
+      .map((n, i) => (i % 4 === day % 4 ? n + " (Watch)" : n))
+      .join(", ");
+    out += "\n";
+  }
+
+  document.getElementById("rotap").innerText = out;
+};
+
+document.addEventListener("click", e => {
+  if (e.target.id === "darkToggle") {
+    document.body.classList.toggle("dark");
+  }
+});
+</script>
+
+</body>
+</html>
