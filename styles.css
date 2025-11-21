@@ -1,0 +1,173 @@
+/* Light Theme Variables */
+:root {
+  --brand: #003366;
+  --accent: #0077cc;
+  --muted: #666;
+  --card: #ffffff;
+  --bg: #f8fafc;
+}
+
+/* Global */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: #111;
+}
+
+/* Top Navigation Bar */
+.topbar {
+  background: var(--brand);
+  color: #fff;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-weight: 700;
+}
+
+.nav a {
+  color: #fff;
+  margin-right: 12px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 18px;
+}
+
+/* Card Boxes */
+.card {
+  background: var(--card);
+  padding: 14px;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+  margin-bottom: 14px;
+}
+
+/* Search Bar */
+.search {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d0d7de;
+}
+
+/* Buttons */
+.btn {
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Flex Layout */
+.flex {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Results */
+.result-title {
+  color: var(--brand);
+  font-weight: 700;
+}
+
+.small {
+  font-size: 14px;
+  color: #444;
+}
+
+.footer {
+  padding: 10px;
+  text-align: center;
+  color: var(--muted);
+  background: #ffffff;
+}
+
+.result {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Chat Window */
+.chat-window {
+  max-width: 900px;
+  margin: auto;
+}
+
+.messages {
+  height: 320px;
+  overflow: auto;
+  border: 1px solid #eee;
+  padding: 10px;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.msg {
+  margin: 8px 0;
+  padding: 8px 10px;
+  border-radius: 8px;
+  max-width: 85%;
+}
+
+.user {
+  background: #e6f7ff;
+  margin-left: auto;
+  text-align: right;
+}
+
+.bot {
+  background: #f4fbff;
+}
+
+/* Suggestions */
+.suggestion {
+  background: #eef6ff;
+  padding: 6px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  border: 1px solid #cfe6ff;
+  display: inline-block;
+  margin: 4px;
+}
+
+/* Flashcards */
+.flashcard {
+  min-height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+/* Dark Mode */
+body.dark {
+  background: #071124;
+  color: #e6eef8;
+}
+
+body.dark .card {
+  background: #0f1b26;
+  color: #e6eef8;
+  box-shadow: none;
+}
+
+body.dark header {
+  background: #02243c;
+}
