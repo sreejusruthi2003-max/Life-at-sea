@@ -1,0 +1,167 @@
+{
+  "sections": [
+    {
+      "name": "Keel",
+      "category": "Ship Construction",
+      "content": "The keel is the main structural backbone running along the bottom of the ship. All major structural members are built around it."
+    },
+    {
+      "name": "Bulkhead",
+      "category": "Ship Construction",
+      "content": "A bulkhead is a vertical partition that divides a ship into watertight compartments to improve strength and safety."
+    },
+    {
+      "name": "Deck Beam",
+      "category": "Ship Construction",
+      "content": "Deck beams support deck plating and maintain the transverse strength of the vessel."
+    }
+  ],
+
+  "materials": [
+    {
+      "name": "Mild Steel",
+      "category": "Material",
+      "content": "Used widely in hull structures due to weldability and good strength."
+    },
+    {
+      "name": "High Tensile Steel",
+      "category": "Material",
+      "content": "Provides higher strength with reduced weight, used in tankers and container ships."
+    }
+  ],
+
+  "machinery": [
+    {
+      "name": "Main Engine (2-Stroke)",
+      "category": "Machinery",
+      "content": "The primary propulsion engine, slow-speed, crosshead type, running on heavy fuel oil or low-sulphur fuel."
+    },
+    {
+      "name": "Purifier",
+      "category": "Machinery",
+      "content": "A centrifugal separator used to remove water and impurities from fuel oil."
+    },
+    {
+      "name": "Freshwater Generator",
+      "category": "Machinery",
+      "content": "Produces fresh water from seawater using evaporation and condensation."
+    }
+  ],
+
+  "steering_thrusters": [
+    {
+      "name": "Rudder",
+      "category": "Steering",
+      "content": "Main steering device located aft, controlled by the steering gear."
+    },
+    {
+      "name": "Bow Thruster",
+      "category": "Manoeuvring",
+      "content": "Provides lateral thrust for easier port manoeuvring."
+    }
+  ],
+
+  "equipment": [
+    {
+      "name": "Windlass",
+      "category": "Deck Equipment",
+      "content": "Used to hoist and lower the anchor and manage the chain cable."
+    },
+    {
+      "name": "Mooring Winch",
+      "category": "Deck Equipment",
+      "content": "Used for mooring line control during berthing operations."
+    }
+  ],
+
+  "safety": [
+    {
+      "name": "Immersion Suit",
+      "category": "Safety",
+      "content": "Protects the wearer from hypothermia in cold waters."
+    },
+    {
+      "name": "Fire Detection System",
+      "category": "Safety",
+      "content": "Detects smoke, heat, or flame and activates alarms."
+    }
+  ],
+
+  "regulations": [
+    {
+      "name": "SOLAS",
+      "category": "Regulation",
+      "content": "International maritime treaty ensuring safety of life at sea through rules and standards."
+    },
+    {
+      "name": "MARPOL",
+      "category": "Regulation",
+      "content": "Regulation controlling ship pollution from oil, chemicals, sewage, garbage, and air emissions."
+    }
+  ],
+
+  "innovations": [
+    {
+      "name": "Hydrogen Fuel Propulsion",
+      "category": "Propulsion",
+      "content": "Uses hydrogen fuel cells for near-zero-emission ship propulsion."
+    },
+    {
+      "name": "Wind-Assisted Propulsion",
+      "category": "Sustainability",
+      "content": "Rotor sails and kites reduce fuel consumption and emissions."
+    },
+    {
+      "name": "Digital Twin Systems",
+      "category": "Digital",
+      "content": "A virtual model of the ship used for monitoring, predictive maintenance, and performance optimization."
+    }
+  ],
+
+  "training": [
+    {
+      "name": "BRM",
+      "category": "Training",
+      "content": "Bridge Resource Management for safe navigation and communication."
+    },
+    {
+      "name": "ERM",
+      "category": "Training",
+      "content": "Engine Room Resource Management focusing on teamwork and communication."
+    }
+  ],
+
+  "flashcards": [
+    {
+      "q": "What is a bulkhead?",
+      "a": "A vertical partition dividing a ship into watertight compartments."
+    },
+    {
+      "q": "Purpose of a purifier?",
+      "a": "Removes contaminants and water from fuel oil."
+    },
+    {
+      "q": "Define SOLAS",
+      "a": "International treaty governing safety of life at sea."
+    }
+  ],
+
+  "quiz": [
+    {
+      "q": "Which component is the backbone of the ship?",
+      "choices": ["Frame", "Keel", "Deck Beam", "Girders"],
+      "answer": 1
+    },
+    {
+      "q": "What does MARPOL regulate?",
+      "choices": ["Navigation lights", "Pollution", "Anchoring", "Cargo loading"],
+      "answer": 1
+    }
+  ],
+
+  "latest_updates": [
+    {
+      "title": "Auto-update system ready (enable GitHub Actions)"
+    }
+  ]
+}
