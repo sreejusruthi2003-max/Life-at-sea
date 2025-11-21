@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Innovations</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">Innovations</div>
+  <nav class="nav"><a href="index.html">Home</a></nav>
+  <button id="darkToggle" class="btn">Dark</button>
+</header>
+
+<main class="container">
+  <section class="card">
+    <h2>Industry Innovations</h2>
+    <div id="list"></div>
+  </section>
+
+  <section class="card">
+    <h3>Filter</h3>
+    <div class="flex">
+      <button class="btn" onclick="filter('All')">All</button>
+      <button class="btn" onclick="filter('Propulsion')">Propulsion</button>
+      <button class="btn" onclick="filter('Digital')">Digital</button>
+      <button class="btn" onclick="filter('Sustainability')">Sustainability</button>
+    </div>
+  </section>
+</main>
+
+<script>
+let ALL = [];
+
+fetch('data.json')
+  .then(r => r.json())
+  .then(d => {
+    ALL = d.innovations || [];
+    render(ALL);
+  });
+
+function render(arr) {
+  const el = document.getElementById('list');
+  el.innerHTML = '';
+
+  arr.forEach(i => {
+    const c = document.createElement('div');
+    c.className = 'card';
+    c.innerHTML = `
+      <div class="result-title">${i.name}</div>
+      <div class="small">${i.category}</div>
+      <p>${i.content}</p>
+    `;
+    el.appendChild(c);
+  });
+}
+
+function filter(tag) {
+  if (tag === 'All') {
+    render(ALL);
+  } else {
+    render(
+      ALL.filter(
+        x =>
+          x.category.toLowerCase().includes(tag.toLowerCase()) ||
+          (x.name || '').toLowerCase().includes(tag.toLowerCase())
+      )
+    );
+  }
+}
+
+document.addEventListener('click', e => {
+  if (e.target.id === 'darkToggle') {
+    document.body.classList.toggle('dark');
+  }
+});
+</script>
+
+</body>
+</html>
