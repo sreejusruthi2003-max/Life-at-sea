@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Quizzes</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">Quizzes</div>
+  <nav class="nav"><a href="index.html">Home</a></nav>
+  <button id="darkToggle" class="btn">Dark</button>
+</header>
+
+<main class="container">
+  <section class="card">
+    <h2>Mini Quiz</h2>
+
+    <div id="q"></div>
+    <div id="choices"></div>
+    <div id="res" class="small"></div>
+
+    <button id="next" class="btn">Next</button>
+  </section>
+</main>
+
+<script>
+let Q = null;
+let qi = 0;
+
+fetch('data.json')
+  .then(r => r.json())
+  .then(d => {
+    Q = d.quiz || [];
+    render();
+  });
+
+function render() {
+  if (!Q.length) {
+    document.getElementById('q').innerText = 'No quiz available';
+    return;
+  }
+
+  const cur = Q[qi];
+  document.getElementById('q').innerText = cur.q;
+
+  const ch = document.getElementById('choices');
+  ch.innerHTML = '';
+
+  cur.choices.forEach((c, i) => {
+    const b = document.createElement('button');
+    b.className = 'btn';
+    b.style.margin = '6px';
+    b.innerText = c;
+    b.onclick = () => {
+      document.getElementById('res').innerText =
+        (i === cur.answer) ? 'Correct ✅' : 'Wrong ❌';
+    };
+    ch.appendChild(b);
+  });
+}
+
+document.getElementById('next').onclick = () => {
+  qi = (qi + 1) % (Q.length || 1);
+  document.getElementById('res').innerText = '';
+  render();
+};
+
+document.addEventListener('click', e => {
+  if (e.target.id === 'darkToggle') {
+    document.body.classList.toggle('dark');
+  }
+});
+</script>
+
+</body>
+</html>
